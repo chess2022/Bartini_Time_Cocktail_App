@@ -2,16 +2,18 @@
   box-sizing: border-box;
 }
 
+
 :root {
   --main-bg: white;
-  --top-menu-bg: #68092a;
-  --sub-menu-bg: #8a0e39;
+  --top-menu-bg: #7d0001;
+  --sub-menu-bg: #e01e17;
 }
 
 body {
-  font-family: Tahoma, Geneva, sans-serif;
-  height: 100vh; 
-  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  max-width: 900px; 
+  margin: 0 auto;
   display: grid;
   grid-template-rows: 3rem auto; 
   /* color: white; */
@@ -40,4 +42,25 @@ nav a {
 
 #top-menu a:hover {
   background-color: var(--sub-menu-bg);
+}
+
+.main {
+    background-image: url("../assets/AdobeStock_295956791.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 488px;
+}
+
+.intro {
+    margin-left: 50px;
+    color: white;
+    margin-top: 25px;
+}
+
+#logo {
+    max-width: 150px
+}
+
+.recipe-search {
+    vertical-align: baseline;
 }
