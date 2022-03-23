@@ -48,14 +48,14 @@ $.ajax(settings).done(function (response) {
 const $input = $("input");
 const $button = $("button");
 const $aside = $("aside");
-
+const APIKEY = "9973533";
 // put click event on the button
 
 $button.on("click", () => {
   // get the text the user types
   const searchTerm = $input.val();
 
-  $.ajax(`https://www.thecocktaildb.com/api/json/v2/1/filter.php?i=${searchTerm}&appid=9973533`
+  $.ajax(`https://www.thecocktaildb.com/api/json/v2/1/filter.php?i=${searchTerm}&appid=${APIKEY}`
       ).then((data) => {
       console.log(data);  
   })
@@ -92,5 +92,5 @@ $button.on("click", () => {
 //   console.log(response);
 // });
 
-// const key = 9973533
+
 // www.thecocktaildb.com/api/json/v2/1/filter.php?i=Dry_Vermouth,Gin,Anis
