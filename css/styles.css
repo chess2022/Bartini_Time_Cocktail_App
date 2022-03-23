@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --main-bg: white;
   --top-menu-bg: #68092a;
@@ -10,7 +14,7 @@ body {
   margin: 0;
   display: grid;
   grid-template-rows: 3rem auto; 
-  color: white;
+  /* color: white; */
 }
 
 .flex-ctr {
@@ -19,9 +23,9 @@ body {
   align-items: center;
 }
 
-.flex-around {
+.flex-right {
   display: flex;
-  justify-content: space-around;
+  justify-content: right;
   align-items: center;
 }
 
@@ -35,5 +39,5 @@ nav a {
 }
 
 #top-menu a:hover {
-  background-color: var(--main-bg);
+  background-color: var(--sub-menu-bg);
 }

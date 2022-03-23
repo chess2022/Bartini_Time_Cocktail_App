@@ -18,6 +18,12 @@ for (let links of menuLinks) {
   console.log(topMenuEl);
 }
 
+console.log(topMenuEl);
+
+topMenuEl.style.height = "100%";
+topMenuEl.style.backgroundColor = "var(--top-menu-bg)";
+topMenuEl.classList.add("flex-right");
+
 
 // LIST OF ALL INGREDIENTS
 /*
@@ -49,26 +55,26 @@ $button.on("click", () => {
   // get the text the user types
   const searchTerm = $input.val();
 
-  const settings = {
-    async: true,
-    crossDomain: true,
-    url: `https://the-cocktail-db.p.rapidapi.com/filter.php?i=${searchTerm}`,
-    method: "GET",
-    headers: {
-      "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-      "x-rapidapi-key": "bcea58ebc5mshb2a5ad3f780d9dep1a9ff0jsn6456bc6fdba7",
-    },
-  };
-
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-  });
+  $.ajax(`https://www.thecocktaildb.com/api/json/v2/1/filter.php?i=${searchTerm}&appid=9973533`
+      ).then((data) => {
+      console.log(data);  
+  })
 });
 
-// $.ajax(
-//         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=a8e8d5199d860a2590933c9606629cef`
-//       ).then((data) => {
-//         console.log(data);
+  // const settings = {
+  //   async: true,
+  //   crossDomain: true,
+  //   url: `www.thecocktaildb.com/api/json/v2/1/filter.php?i=${searchTerm}`,
+  //   method: "GET",
+  //   headers: {
+  //     "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+  //     "x-rapidapi-key": "9973533",
+  //   },
+  // };
+
+  // $.ajax(settings).done(function (response) {
+  //   console.log(response);
+  // });
 
 // SEARCH BY INGREDIENT
 // const settings = {
