@@ -82,3 +82,17 @@ button {
     text-transform: uppercase;
     border: 0;
 }
+
+#results { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
+    justify-content: center;
+    padding: 50px;
+}   
+
+
+div img {
+    width: 200px;
+    object-fit: cover;
+}

@@ -1,3 +1,6 @@
+// test api: https://www.thecocktaildb.com/api/json/v2/1/filter.php?i=Dry_Vermouth,Gin,Anis
+
+
 // Top nav bar menu
 var menuLinks = [
   { text: "home", href: "#top-menu" },
@@ -11,14 +14,14 @@ for (let links of menuLinks) {
   let link = document.createElement("a");
   link.textContent = links.text;
   link.setAttribute("href", links.href);
-  console.log(link);
+  //console.log(link);
 
   topMenuEl.appendChild(link);
 
-  console.log(topMenuEl);
+  //console.log(topMenuEl);
 }
 
-console.log(topMenuEl);
+// console.log(topMenuEl);
 
 topMenuEl.style.height = "100%";
 topMenuEl.style.backgroundColor = "var(--top-menu-bg)";
@@ -49,15 +52,23 @@ const APIKEY = "9973533";
 // put click event on the button
 
 $button.on("click", () => {
-  get the text the user types
+  // get the text the user types
   const searchTerm = $input.val();
 
   $.ajax(`https://www.thecocktaildb.com/api/json/v2/1/filter.php?i=${searchTerm}&appid=${APIKEY}`
       ).then((data) => {
-      console.log(data);  
-  })
+        // make grid for the results to populate in
+        const container = document.getElementById("results");
+        let cell = document.createElement("div");
+        // cell.innerHTML = `${data.drinks[0].strDrinkThumb}`; //maybe make the array into a string first?
+        container.appendChild(cell);
+        let img = document.createElement("img");
+        img.src = `${data.drinks[0].strDrinkThumb}`;
+        cell.appendChild(img);
+
+        console.log(data);
+      })
 });
 
 
 
-// www.thecocktaildb.com/api/json/v2/1/filter.php?i=Dry_Vermouth,Gin,Anis
