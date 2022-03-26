@@ -60,15 +60,26 @@ $button.on("click", () => {
         // make grid for the results to populate in
         const container = document.getElementById("results");
         let cell = document.createElement("div");
-        // cell.innerHTML = `${data.drinks[0].strDrinkThumb}`; //maybe make the array into a string first?
         container.appendChild(cell);
         let img = document.createElement("img");
-        img.src = `${data.drinks[0].strDrinkThumb}`;
-        cell.appendChild(img);
+        let title = document.createElement("h2");
+        for (i=0; i<= data.drinks.length; i++) {
+            img.src = `${data.drinks[i].strDrinkThumb}`;
+            title.src = `${data.drinks[i].strDrink}`;
+            cell.appendChild(img);
+            cell.appendChild(title)
+
+            console.log(title)
+        }
+        
+
 
         console.log(data);
       })
 });
 
-
-
+//  for ($i = 0; $i < sizeof($a); $i++) 
+//         {
+//          echo $a[$i] .' '. $b[$i];
+//         }
+// !!NEED TO: clear search box after button is pushed & clear results from last search when new search is initiated
