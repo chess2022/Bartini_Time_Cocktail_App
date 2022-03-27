@@ -53,33 +53,31 @@ const APIKEY = "9973533";
 
 $button.on("click", () => {
   // get the text the user types
-  const searchTerm = $input.val();
+  let searchTerm = $input.val();
 
   $.ajax(`https://www.thecocktaildb.com/api/json/v2/1/filter.php?i=${searchTerm}&appid=${APIKEY}`
       ).then((data) => {
         // make grid for the results to populate in
-        const container = document.getElementById("results");
-        let cell = document.createElement("div");
-        container.appendChild(cell);
-        let img = document.createElement("img");
-        let title = document.createElement("h2");
-        for (i=0; i<= data.drinks.length; i++) {
-            img.src = `${data.drinks[i].strDrinkThumb}`;
-            title.src = `${data.drinks[i].strDrink}`;
-            cell.appendChild(img);
-            cell.appendChild(title)
-
-            console.log(title)
+        for (let i = 0; i < data.drinks.length; i++) {
+          const container = document.getElementById("results");
+          let img = document.createElement("img");
+          let title = document.createElement("h3");
+          let cell = document.createElement("div");
+          container.append(cell);
+          img.src = `${data.drinks[i].strDrinkThumb}`;
+          title.textContent = `${data.drinks[i].strDrink}`;
+          cell.append(img, title)
+          console.log(data)
         }
+ 
+          
         
 
 
         console.log(data);
+        console.log(data.drinks)
       })
 });
 
-//  for ($i = 0; $i < sizeof($a); $i++) 
-//         {
-//          echo $a[$i] .' '. $b[$i];
-//         }
+
 // !!NEED TO: clear search box after button is pushed & clear results from last search when new search is initiated
