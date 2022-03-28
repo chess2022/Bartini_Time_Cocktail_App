@@ -93,9 +93,8 @@ button {
 
 #recipe { 
     display: grid; 
-    grid-template-columns: (2, 1fr);
+    grid-template-columns: 25% 75%;
     grid-gap: 30px;
-    justify-content: center;
     padding: 50px;
 }   
 
@@ -106,7 +105,7 @@ div img {
     justify-content: center;
 }
 
-/* For the popup type window */
+/* For the popup type window 
 .btn{
   position: absolute;
   top: 50%;
@@ -162,6 +161,7 @@ div img {
   background: rgb(111, 111, 223);
   display: inline-block;
   border-radius: 1px solid #000;
+  */
 
 /* .inactive {
     visibility: hidden;
