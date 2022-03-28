@@ -93,10 +93,10 @@ $button.on("click", () => {
               recipeCell.append(bigImg, recipeTitle);
               let ingredients = document.createElement("ul");
               let instructions = document.createElement("p");
-              ingredients.li = `${recipe.drinks[0].strIngredient1}: ${recipe.drinks[0].strMeasure1}`, 
+              ingredients.li = [`${recipe.drinks[0].strIngredient1}: ${recipe.drinks[0].strMeasure1}`, 
                 `${recipe.drinks[0].strIngredient2}: ${recipe.drinks[0].strMeasure2}`,
                 `${recipe.drinks[0].strIngredient3}: ${recipe.drinks[0].strMeasure3}`,
-                `${recipe.drinks[0].strIngredient4}: ${recipe.drinks[0].strMeasure4}`;
+                `${recipe.drinks[0].strIngredient4}: ${recipe.drinks[0].strMeasure4}`];
               instructions.innerText = `${recipe.drinks[0].strInstructions}`;
               ingredients.append(ingredients.li)
               recipeCell2.append(`Ingredients:`,ingredients, instructions);
