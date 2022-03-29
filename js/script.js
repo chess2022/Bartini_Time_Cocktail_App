@@ -1,6 +1,3 @@
-// test api: https://www.thecocktaildb.com/api/json/v2/1/filter.php?i=Dry_Vermouth,Gin,Anis
-
-
 // Top nav bar menu
 var menuLinks = [
   { text: "home", href: "#top-menu" },
@@ -58,7 +55,7 @@ $button.on("click", () => {
 
 
   $.ajax(`https://www.thecocktaildb.com/api/json/v2/1/filter.php?i=${searchTerm}&appid=${APIKEY}`
-      ).then((data) => {
+      ).then((data) => {        
         // make grid for the results to populate in
         for (let i = 0; i < data.drinks.length; i++) {
           const container = document.getElementById("results");
@@ -69,8 +66,13 @@ $button.on("click", () => {
           img.src = `${data.drinks[i].strDrinkThumb}`;
           title.textContent = `${data.drinks[i].strDrink}`;
           cell.id = `${data.drinks[i].idDrink}`;
-          // cell.innerHTML = `<a class="btn" class="box" onclick="pop()"></a>`
           cell.append(img, title);
+          // make sure searchResults come into view
+          const searchResults = document.getElementById("results");
+          searchResults.scrollIntoView();
+          // clear input box
+
+          // Make recipe in new div when a drink selection is made
 
           const $drink = $(cell);
 
@@ -78,32 +80,57 @@ $button.on("click", () => {
             $.ajax(
               `https://www.thecocktaildb.com/api/json/v2/1/lookup.php?i=${cell.id}&appid=${APIKEY}`
             ).then((recipe) => {
+              // console.log(recipe);
+              // make sure the recipe is in view when a drink is selected
+              const recipeResults = document.getElementById("search");
+              recipeResults.scrollIntoView();
 
-              console.log(recipe)
-              // make grid for the results to populate in
-              // for (let i = 0; i < recipe.drinks.length; i++) {
               const recipeContainer = document.getElementById("recipe");
               let bigImg = document.createElement("img");
               let recipeTitle = document.createElement("h3");
+              // add 2 divs (sections) to the recipe container
               let recipeCell = document.createElement("div");
               let recipeCell2 = document.createElement("div");
               recipeContainer.append(recipeCell, recipeCell2);
               bigImg.src = `${recipe.drinks[0].strDrinkThumb}`;
               recipeTitle.textContent = `${recipe.drinks[0].strDrink}`;
+              //places the image and title in first div:
               recipeCell.append(bigImg, recipeTitle);
-              let ingredients = document.createElement("ul");
+
               let instructions = document.createElement("p");
-              ingredients.li = [`${recipe.drinks[0].strIngredient1}: ${recipe.drinks[0].strMeasure1}`, 
+              let ingredientItems = [
+                `${recipe.drinks[0].strIngredient1}: ${recipe.drinks[0].strMeasure1}`,
                 `${recipe.drinks[0].strIngredient2}: ${recipe.drinks[0].strMeasure2}`,
                 `${recipe.drinks[0].strIngredient3}: ${recipe.drinks[0].strMeasure3}`,
-                `${recipe.drinks[0].strIngredient4}: ${recipe.drinks[0].strMeasure4}`];
+                `${recipe.drinks[0].strIngredient4}: ${recipe.drinks[0].strMeasure4}`,
+                `${recipe.drinks[0].strIngredient5}: ${recipe.drinks[0].strMeasure5}`,
+                `${recipe.drinks[0].strIngredient6}: ${recipe.drinks[0].strMeasure6}`,
+                `${recipe.drinks[0].strIngredient7}: ${recipe.drinks[0].strMeasure7}`,
+                `${recipe.drinks[0].strIngredient8}: ${recipe.drinks[0].strMeasure8}`,
+                `${recipe.drinks[0].strIngredient9}: ${recipe.drinks[0].strMeasure9}`,
+                `${recipe.drinks[0].strIngredient10}: ${recipe.drinks[0].strMeasure10}`,
+                `${recipe.drinks[0].strIngredient11}: ${recipe.drinks[0].strMeasure11}`,
+                `${recipe.drinks[0].strIngredient12}: ${recipe.drinks[0].strMeasure12}`,
+                `${recipe.drinks[0].strIngredient13}: ${recipe.drinks[0].strMeasure13}`,
+                `${recipe.drinks[0].strIngredient14}: ${recipe.drinks[0].strMeasure14}`,
+                `${recipe.drinks[0].strIngredient15}: ${recipe.drinks[0].strMeasure15}`,
+              ];
+              let ingredientList = document.createElement("ul");
+              for (let x = 0; x < ingredientItems.length; x++) {
+                if (!ingredientItems[x].includes("null")) {
+                  let item = document.createElement("li");
+                  item.textContent = ingredientItems[x];
+                  ingredientList.appendChild(item);
+                }
+              }
+
               instructions.innerText = `${recipe.drinks[0].strInstructions}`;
-              ingredients.append(ingredients.li)
-              recipeCell2.append(`Ingredients:`,ingredients, instructions);
+              //places ingredients and instructions in second div:
+              recipeCell2.append(`Ingredients:`, ingredientList, instructions);
             });
           });
         }
-})
+  })
 
 })
 
@@ -111,32 +138,3 @@ $button.on("click", () => {
 
 // !!NEED TO: clear search box after button is pushed & clear results from last search when new search is initiated
 
-        // testing out floating window
-
-          // cell.innerHTML = `<a class="btn" class="box" onclick="pop()"></a>`
-
-
-        // var modal = null;
-        // function pop() {
-        //   if (modal === null) {
-        //     document.container.cell.style.display = "block";
-        //     modal = true;
-        //   } else {
-        //     document.container.cell.style.display = "none";
-        //     modal = null;
-        //   }
-        // }
-
-        // another method to test:
-
-        // $(function () {
-        //   $(document.container.img).on("click", function () {
-        //     $("#recipe-panel").addClass("PanelFloat");
-        //   });
-        //   $(document.container.cell).on("click", function () {
-        //     $("#recipe-panel").removeClass("PanelFloat");
-        //   });
-
-        // console.log(data);
-        // console.log(data.drinks);
-        // });
