@@ -31,28 +31,17 @@ const $button = $("button");
 const $aside = $("aside");
 const APIKEY = "9973533";
 
-// Get random list of 10 cocktails
-// const $suprise = $("menuLinks[2].text") doesn't work - need to think of solution
-
-// !! this api call for random list works!
-// $button.on("click", () => {
-//   $.ajax(
-//     `https://www.thecocktaildb.com/api/json/v2/${APIKEY}/randomselection.php`
-//   ).then((data) => {
-//     console.log(data);
-//   });
-// });
-
+// function reload() {
+//   reload = location.reload();
+// }
 
 // FILTER BY MULTI-INGREDIENT
 
-// put click event on the button
-// $(document).ready(function(){
-//     let $input = '';
 
 $button.on("click", () => {
-  // clear the input
+  // clear the input box
   $input.val("");
+
   // get the text the user types
   let searchTerm = $input.val();
 
@@ -73,9 +62,6 @@ $button.on("click", () => {
       // make sure searchResults come into view
       const searchResults = document.getElementById("results");
       searchResults.scrollIntoView();
-      // clear input box
-      // document.getElementByID("input").value = "";
-      // }
 
       // Make recipe in new div when a drink selection is made
 
@@ -122,7 +108,7 @@ $button.on("click", () => {
           ];
           let ingredientList = document.createElement("ul");
           for (let x = 0; x < ingredientItems.length; x++) {
-            if (!ingredientItems[x].includes("null")) {
+            if (!ingredientItems[x].includes("null" || "")) {
               let item = document.createElement("li");
               item.textContent = ingredientItems[x];
               ingredientList.appendChild(item);
@@ -136,9 +122,47 @@ $button.on("click", () => {
       });
     }
   });
-})
+});
+
+// clear results from last search when button is clicked
+const refreshButton = document.querySelector(".refresh-button");
+
+const refreshPage = () => {
+  location.reload();
+};
+
+refreshButton.addEventListener("click", refreshPage);
 
 
 
-// !!NEED TO: clear results from last search when new search is initiated
+// $(document).ready(function(){
 
+//     // Set cache = false for all jquery ajax requests.
+//     $.ajaxSetup({
+//         cache: false,
+//     });
+
+// })
+
+
+
+// $button.on("click", () => {
+//   // clear the input
+//   searchResults.jqGrid("GridUnload")
+// })
+
+      // container.refresh();
+
+// save this for somewhere maybe: reload(), 
+
+      // Get random list of 10 cocktails
+// const $suprise = $("menuLinks[2].text") doesn't work - need to think of solution
+
+// !! this api call for random list works!
+// $button.on("click", () => {
+//   $.ajax(
+//     `https://www.thecocktaildb.com/api/json/v2/${APIKEY}/randomselection.php`
+//   ).then((data) => {
+//     console.log(data);
+//   });
+// });
