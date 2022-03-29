@@ -1,28 +1,28 @@
-// Top nav bar menu
-var menuLinks = [
-  { text: "home", href: "#top-menu" },
-  { text: "search", href: "#search" },
-  { text: "suprise me", href: "#random"},
-];
+// // Top nav bar menu
+// var menuLinks = [
+//   { text: "home", href: "#top-menu" },
+//   { text: "search", href: "#search" },
+//   { text: "suprise me", href: "#random"},
+// ];
 
-let topMenuEl = document.querySelector("#top-menu");
+// let topMenuEl = document.querySelector("#top-menu");
 
-for (let links of menuLinks) {
-  let link = document.createElement("a");
-  link.textContent = links.text;
-  link.setAttribute("href", links.href);
-  //console.log(link);
+// for (let links of menuLinks) {
+//   let link = document.createElement("a");
+//   link.textContent = links.text;
+//   link.setAttribute("href", links.href);
+//   //console.log(link);
 
-  topMenuEl.appendChild(link);
+//   topMenuEl.appendChild(link);
 
-  //console.log(topMenuEl);
-}
+//   //console.log(topMenuEl);
+// }
 
-// console.log(topMenuEl);
+// // console.log(topMenuEl);
 
-topMenuEl.style.height = "100%";
-topMenuEl.style.backgroundColor = "var(--top-menu-bg)";
-topMenuEl.classList.add("flex-right");
+// topMenuEl.style.height = "100%";
+// topMenuEl.style.backgroundColor = "var(--top-menu-bg)";
+// topMenuEl.classList.add("flex-right");
 
 // variables needed for rest of code
 

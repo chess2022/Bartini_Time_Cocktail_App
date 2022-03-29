@@ -27,6 +27,11 @@ body {
   align-items: center;
 }
 
+/* delete this style when top nav is active */
+header {
+    background-color: black;
+}
+
 
 nav a {
   line-height: 3rem;
@@ -49,8 +54,9 @@ nav a {
     background-size: cover;
     height: 488px;
     padding-left: 50px;
-    padding-top: 50px;
+    /* padding-top: 50px; */
     padding-right: 50px;
+    /* margin: 0 auto; */
 }
 
 
@@ -105,3 +111,27 @@ div img {
     justify-content: center;
 }
 
+
+/* ***************************
+** Tablet Media Query
+*************************** */
+
+@media screen and (min-width: 480px) {
+}
+
+/* ***************************
+** Desktop Media Query
+*************************** */
+
+@media screen and (min-width: 769px) {
+}
+
+/* Smartphone Portrait */
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+}

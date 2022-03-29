@@ -3,7 +3,8 @@
 
 **************************************************
 
-A simple web application to look up cocktail recipes using APIs from [TheCocktailDB](https://www.thecocktaildb.com/).
+A simple web application to look up cocktail recipes using 
+APIs from [TheCocktailDB](https://www.thecocktaildb.com/).
 
 **************************************************
 
@@ -25,8 +26,9 @@ A simple web application to look up cocktail recipes using APIs from [TheCocktai
 
 **************************************************
 
-![Bartini Time Search Results](/assets/Results.png)
-![Bartini Time Recipe Results](/assets/Recipe.png)
+![Bartini Time Main App](/assets/Bartini_Time_Main.png)
+![Bartini Time Search Results](/assets/Bartini_Time_Results.png)
+![Bartini Time Recipe](/assets/Bartini_Time_Recipe.png)
 
 **************************************************
 
@@ -42,6 +44,7 @@ Put the deployed app link here...
 
 **************************************************
 
+- Make app dynamic for various screens
 - Floating Nav bar
 - Previous results clear out when new search is initiated
 - Filter results by various criteria
