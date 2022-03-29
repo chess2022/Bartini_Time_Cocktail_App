@@ -1,9 +1,9 @@
 
-# Bartini Time!
+# It's Bartini Time!
 
 **************************************************
 
-A simple web application to look up cocktail recipes using some APIs from [TheCocktailDB](https://www.thecocktaildb.com/).
+A simple web application to look up cocktail recipes using APIs from [TheCocktailDB](https://www.thecocktaildb.com/).
 
 **************************************************
 

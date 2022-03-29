@@ -40,7 +40,7 @@ const APIKEY = "9973533";
 
 $button.on("click", () => {
   // clear the input box
-  $input.val("");
+  // $input.val("");
 
   // get the text the user types
   let searchTerm = $input.val();
@@ -166,3 +166,4 @@ refreshButton.addEventListener("click", refreshPage);
 //     console.log(data);
 //   });
 // });
+
