@@ -71,9 +71,14 @@ $button.on("click", () => {
           let recipeTitle = document.createElement("h3");
           // add 2 divs (sections) to the recipe container
           let recipeCell = document.createElement("div");
+          recipeCell.className = "recipeImg";
           let recipeCell2 = document.createElement("div");
+          recipeCell2.className = "recipeIngredients";
           let recipeCell3 = document.createElement("div");
-          recipeContainer.append(recipeCell, recipeCell2, recipeCell3);
+          recipeCell3.className = "recipeMeasurements";
+          let recipeCell4 = document.createElement("div");
+          recipeCell4.className = "recipeInstructions";
+          recipeContainer.append(recipeCell, recipeCell2, recipeCell3, recipeCell4);
           bigImg.src = `${recipe.drinks[0].strDrinkThumb}`;
           recipeTitle.textContent = `${recipe.drinks[0].strDrink}`;
           //places the image and title in first div:
@@ -140,8 +145,9 @@ $button.on("click", () => {
 
           instructions.innerText = `${recipe.drinks[0].strInstructions}`;
           //places ingredients and instructions in second and third divs:
-          recipeCell2.append(ingredients, instructions);
+          recipeCell2.append(ingredients);
           recipeCell3.append(measurements);
+          recipeCell4.append(instructions);
         });
       });
     }

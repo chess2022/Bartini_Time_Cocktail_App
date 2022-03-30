@@ -100,9 +100,26 @@ button {
 #recipe { 
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "img ingredients measurements"
+      "img instructions instructions";
     grid-gap: 30px;
     padding: 50px;
-}   
+}  
+.recipeImg {
+  grid-area: img;
+}
+.recipeIngredients {
+  grid-area: ingredients;
+}
+.recipeMeasurements {
+  grid-area: measurements;
+}
+.recipeInstructions {
+  grid-area: instructions;
+}
+
 
 
 div img {
