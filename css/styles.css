@@ -7,12 +7,12 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  height: 100vh;
+  /* height: 100vh; */
   max-width: 900px; 
   margin: 0 auto;
   display: grid;
   grid-template-rows: 3rem auto; 
-  /* color: white; */
+  color: black;
 }
 
 .flex-ctr {
@@ -57,9 +57,13 @@ nav a {
     /* padding-top: 50px; */
     padding-right: 50px;
     /* margin: 0 auto; */
+
 }
 
+#data {
+    background-color: white;
 
+}
 #intro {
     color: white;
 }
@@ -80,6 +84,7 @@ nav a {
 
 input {
     width: 250px;
+    /* background-color: white; */
 }
 
 button {
