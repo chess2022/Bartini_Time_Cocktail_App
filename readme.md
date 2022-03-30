@@ -36,7 +36,7 @@ APIs from [TheCocktailDB](https://www.thecocktaildb.com/).
 
 **************************************************
 
-![It's Bartini Time!](https://chess2022.github.io/Bartini_Time_Cocktail_App/)
+[It's Bartini Time!](https://chess2022.github.io/Bartini_Time_Cocktail_App/)
 
 **************************************************
 
