@@ -98,7 +98,7 @@ $button.on("click", () => {
           ];
           let ingredientList = document.createElement("ul");
           for (let x = 0; x < ingredientItems.length; x++) {
-            if (!ingredientItems[x].includes("null" || "")) {
+            if (!ingredientItems[x].includes("null")) {
               let item = document.createElement("li");
               item.textContent = ingredientItems[x];
               ingredientList.appendChild(item);

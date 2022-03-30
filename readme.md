@@ -36,7 +36,7 @@ APIs from [TheCocktailDB](https://www.thecocktaildb.com/).
 
 **************************************************
 
-Put the deployed app link here...
+![It's Bartini Time!](https://chess2022.github.io/Bartini_Time_Cocktail_App/)
 
 **************************************************
 
@@ -52,3 +52,5 @@ Put the deployed app link here...
 - Chosen drink recipe shows up in a floating div
 - Autocomplete input field
 - Add printer-friendly version of recipe
+- Add random recipe function (returns 10 drinks)
+- Add a footer
