@@ -104,7 +104,6 @@ button {
     grid-template-areas:
       "img ingredients measurements"
       "img instructions instructions";
-    grid-gap: 30px;
     padding: 50px;
 }  
 .recipeImg {
