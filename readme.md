@@ -51,3 +51,4 @@ Put the deployed app link here...
 - Allow user to fill out all ingredients on hand and see what they can make
 - Chosen drink recipe shows up in a floating div
 - Autocomplete input field
+- Add printer-friendly version of recipe

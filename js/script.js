@@ -1,4 +1,4 @@
-// // Top nav bar menu
+// Top nav bar menu
 // var menuLinks = [
 //   { text: "home", href: "#top-menu" },
 //   { text: "search", href: "#search" },
@@ -11,18 +11,13 @@
 //   let link = document.createElement("a");
 //   link.textContent = links.text;
 //   link.setAttribute("href", links.href);
-//   //console.log(link);
-
 //   topMenuEl.appendChild(link);
-
-//   //console.log(topMenuEl);
 // }
-
-// // console.log(topMenuEl);
 
 // topMenuEl.style.height = "100%";
 // topMenuEl.style.backgroundColor = "var(--top-menu-bg)";
 // topMenuEl.classList.add("flex-right");
+
 
 // variables needed for rest of code
 
@@ -31,12 +26,7 @@ const $button = $("button");
 const $aside = $("aside");
 const APIKEY = "9973533";
 
-// function reload() {
-//   reload = location.reload();
-// }
-
 // FILTER BY MULTI-INGREDIENT
-
 
 $button.on("click", () => {
   // clear the input box
@@ -153,12 +143,14 @@ refreshButton.addEventListener("click", refreshPage);
 
       // container.refresh();
 
-// save this for somewhere maybe: reload(), 
 
-      // Get random list of 10 cocktails
-// const $suprise = $("menuLinks[2].text") doesn't work - need to think of solution
+// function reload() {
+//   reload = location.reload();
+// }
+// reload(), 
 
-// !! this api call for random list works!
+
+// !! this api call for random list works! Add feature to later iterations
 // $button.on("click", () => {
 //   $.ajax(
 //     `https://www.thecocktaildb.com/api/json/v2/${APIKEY}/randomselection.php`
