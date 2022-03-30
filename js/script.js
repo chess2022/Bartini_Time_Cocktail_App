@@ -72,7 +72,8 @@ $button.on("click", () => {
           // add 2 divs (sections) to the recipe container
           let recipeCell = document.createElement("div");
           let recipeCell2 = document.createElement("div");
-          recipeContainer.append(recipeCell, recipeCell2);
+          let recipeCell3 = document.createElement("div");
+          recipeContainer.append(recipeCell, recipeCell2, recipeCell3);
           bigImg.src = `${recipe.drinks[0].strDrinkThumb}`;
           recipeTitle.textContent = `${recipe.drinks[0].strDrink}`;
           //places the image and title in first div:
@@ -80,34 +81,68 @@ $button.on("click", () => {
 
           let instructions = document.createElement("p");
           let ingredientItems = [
-            `${recipe.drinks[0].strIngredient1}: ${recipe.drinks[0].strMeasure1}`,
-            `${recipe.drinks[0].strIngredient2}: ${recipe.drinks[0].strMeasure2}`,
-            `${recipe.drinks[0].strIngredient3}: ${recipe.drinks[0].strMeasure3}`,
-            `${recipe.drinks[0].strIngredient4}: ${recipe.drinks[0].strMeasure4}`,
-            `${recipe.drinks[0].strIngredient5}: ${recipe.drinks[0].strMeasure5}`,
-            `${recipe.drinks[0].strIngredient6}: ${recipe.drinks[0].strMeasure6}`,
-            `${recipe.drinks[0].strIngredient7}: ${recipe.drinks[0].strMeasure7}`,
-            `${recipe.drinks[0].strIngredient8}: ${recipe.drinks[0].strMeasure8}`,
-            `${recipe.drinks[0].strIngredient9}: ${recipe.drinks[0].strMeasure9}`,
-            `${recipe.drinks[0].strIngredient10}: ${recipe.drinks[0].strMeasure10}`,
-            `${recipe.drinks[0].strIngredient11}: ${recipe.drinks[0].strMeasure11}`,
-            `${recipe.drinks[0].strIngredient12}: ${recipe.drinks[0].strMeasure12}`,
-            `${recipe.drinks[0].strIngredient13}: ${recipe.drinks[0].strMeasure13}`,
-            `${recipe.drinks[0].strIngredient14}: ${recipe.drinks[0].strMeasure14}`,
-            `${recipe.drinks[0].strIngredient15}: ${recipe.drinks[0].strMeasure15}`,
+            `${recipe.drinks[0].strIngredient1}`,
+            `${recipe.drinks[0].strIngredient2}`,
+            `${recipe.drinks[0].strIngredient3}`,
+            `${recipe.drinks[0].strIngredient4}`,
+            `${recipe.drinks[0].strIngredient5}`,
+            `${recipe.drinks[0].strIngredient6}`,
+            `${recipe.drinks[0].strIngredient7}`,
+            `${recipe.drinks[0].strIngredient8}`,
+            `${recipe.drinks[0].strIngredient9}`,
+            `${recipe.drinks[0].strIngredient10}`,
+            `${recipe.drinks[0].strIngredient11}`,
+            `${recipe.drinks[0].strIngredient12}`,
+            `${recipe.drinks[0].strIngredient13}`,
+            `${recipe.drinks[0].strIngredient14}`,
+            `${recipe.drinks[0].strIngredient15}`,
           ];
-          let ingredientList = document.createElement("ul");
+
+          let ingredientMeasurements = [
+            `${recipe.drinks[0].strMeasure1}`,
+            `${recipe.drinks[0].strMeasure2}`,
+            `${recipe.drinks[0].strMeasure3}`,
+            `${recipe.drinks[0].strMeasure4}`,
+            `${recipe.drinks[0].strMeasure5}`,
+            `${recipe.drinks[0].strMeasure6}`,
+            `${recipe.drinks[0].strMeasure7}`,
+            `${recipe.drinks[0].strMeasure8}`,
+            `${recipe.drinks[0].strMeasure9}`,
+            `${recipe.drinks[0].strMeasure10}`,
+            `${recipe.drinks[0].strMeasure11}`,
+            `${recipe.drinks[0].strMeasure12}`,
+            `${recipe.drinks[0].strMeasure13}`,
+            `${recipe.drinks[0].strMeasure14}`,
+            `${recipe.drinks[0].strMeasure15}`,
+          ];
+          
+          let ingredients = document.createElement("ul");
+          // ingredients.setAttribute("style", "list-style-type: none");
           for (let x = 0; x < ingredientItems.length; x++) {
             if (!ingredientItems[x].includes("null")) {
               let item = document.createElement("li");
               item.textContent = ingredientItems[x];
-              ingredientList.appendChild(item);
+              ingredients.appendChild(item);
+            }
+          }
+
+          let measurements = document.createElement("ul");
+          measurements.setAttribute("style", "list-style-type: none")
+          // measurements.setAttribute("style", "padding: 0");
+          // measurements.setAttribute("style", "margin: 0");
+
+          for (let y = 0; y < ingredientMeasurements.length; y++) {
+            if (!ingredientMeasurements[y].includes("null")) {
+              let measure = document.createElement("li");
+              measure.textContent = ingredientMeasurements[y];
+              measurements.appendChild(measure);
             }
           }
 
           instructions.innerText = `${recipe.drinks[0].strInstructions}`;
-          //places ingredients and instructions in second div:
-          recipeCell2.append(`Ingredients:`, ingredientList, instructions);
+          //places ingredients and instructions in second and third divs:
+          recipeCell2.append(ingredients, instructions);
+          recipeCell3.append(measurements);
         });
       });
     }
@@ -119,6 +154,13 @@ const refreshButton = document.querySelector(".refresh-button");
 
 const refreshPage = () => {
   location.reload();
+  // $("#data").remove();
+  // let data = document.createElement("div");
+  // document.append(data)
+  // let recipe = document.createElement("div")
+  // data.append(recipe)
+  // let results = document.createElement("div");
+  // data.append(results);
 };
 
 refreshButton.addEventListener("click", refreshPage);
