@@ -117,7 +117,6 @@ $button.on("click", () => {
           ];
           
           let ingredients = document.createElement("ul");
-          // ingredients.setAttribute("style", "list-style-type: none");
           for (let x = 0; x < ingredientItems.length; x++) {
             if (!ingredientItems[x].includes("null")) {
               let item = document.createElement("li");
@@ -127,7 +126,7 @@ $button.on("click", () => {
           }
 
           let measurements = document.createElement("ul");
-          measurements.setAttribute("style", "list-style-type: none")
+          measurements.setAttribute("style", "list-style-type:none")
           // measurements.setAttribute("style", "padding: 0");
           // measurements.setAttribute("style", "margin: 0");
 
